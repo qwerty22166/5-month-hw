@@ -1,23 +1,19 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
-import Users from "../../components/users/Users";
+import {useDispatch} from "react-redux";
+import {userQ} from "../../redux/actions";
 
 function UsersListPage() {
+const dispatch = useDispatch()
 
-    const fetch = () => {
-
-        return async function fetch () {
-            const res = fetch('https://jsonplaceholder.typicode.com/users');
-            const data = res.json()
-
-        }
+    const user =()=> {
+    dispatch(userQ())
     }
 
     return (
         <Container>
             <h1 className="my-4">users list</h1>
-            <button onClick={fetch}>get users</button>
-            {/*<Users el={fetch.res}/>*/}
+            {user}
         </Container>
     );
 }

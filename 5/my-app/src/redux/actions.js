@@ -28,7 +28,11 @@ export function alertOff () {
     }
 }
 
-
+export function userQ () {
+    return {
+        type: types.USER
+    }
+}
 
 export function createUserAction (userInfo) {
 

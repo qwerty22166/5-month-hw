@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Container, Form, Row, Col, Button, Spinner, Alert} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
-import {alertOff, alertOn, createUserAction} from "../../redux/actions";
+import {alertOff, alertOn, createUserAction, userQ} from "../../redux/actions";
 
 function UserRegisterPage() {
     const dispatch = useDispatch()
@@ -21,6 +21,10 @@ function UserRegisterPage() {
             ...user,
             [event.target.name]: event.target.value
         })
+    }
+
+    const userReg = (user) => {
+        dispatch(userQ(user))
     }
 
     const registerUser = (event) => {
@@ -88,7 +92,7 @@ function UserRegisterPage() {
                                 </Form.Group>
                             </Col>
                             <Col lg={3}>
-                                <Button type="submit" variant="success" className="w-100">
+                                <Button type="submit" variant="success" className="w-100" onClick={userReg}>
                                     register user
                                 </Button>
                             </Col>

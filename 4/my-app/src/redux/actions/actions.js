@@ -1,29 +1,21 @@
 import {types} from "../types";
 
 
-export function changeTitleAction() {
-    return {
-        type: types.CHANGE_TITLE
-    }
-}
-
-
-export function setTimeOutAction () {
-    return function (dispatch) {
-        setTimeout(() => {
-            dispatch(changeTitleAction())
-        },2000)
-    }
-}
-
-
-
 function getUsersAction (users) {
     return {
         type: types.GET_USERS,
         payload: users
     }
 }
+
+function getUserOneAction (user){
+    return {
+        type: types.GET_USERS_ONE,
+        payload: user
+    }
+
+}
+
 
 export function fetchUsersAction () {
 
@@ -34,18 +26,11 @@ export function fetchUsersAction () {
     }
 }
 
-function getOneUser (user) {
-    return {
-        type: types.GET_ONE_USER,
-        payload: user
-    }
-}
-
 export function fetchUserOneAction (id) {
 
     return async function (dispatch) {
         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         const data = await response.json()
-        dispatch(getOneUser(data))
+       dispatch(getUserOneAction(data))
     }
 }

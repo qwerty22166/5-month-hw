@@ -2,26 +2,18 @@
     text-align: center;
 }
 
-.activeMenu {
-    transition: 0.3s;
-    list-style-type: none;
-    width: 100%;
-    padding: 20px;
-    background: gray;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    box-sizing: border-box;
+.userOneInfo{
+    background-color: #000000;
+    color: #fff;
 }
 
-.hiddenMenu {
-    transition: 0.3s;
-    list-style-type: none;
-    width: 100%;
-    padding: 20px;
-    background: gray;
-    position: absolute;
-    left: -100%;
-    top: 50px;
-    box-sizing: border-box;
+li{
+    list-style: none;
 }
+
+.btn {
+    background: green;
+    border: none;
+}
+
+
